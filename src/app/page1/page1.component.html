@@ -1,0 +1,19 @@
+<app-table [dataSource]="data">
+  <ng-template cell="position" let-element>
+    {{element}}
+  </ng-template>
+  <ng-template cell="weight" let-element>
+    {{element}}
+  </ng-template>
+  <ng-template cell="symbol" let-element>
+    {{element}}
+  </ng-template>
+  <ng-template cell="name" let-data="element" let-element>
+    <span
+      [class.heavy]="data.weight > 15"
+      [class.light]="data.weight < 5"
+      [class.moderate]="data.weight > 5 && data.weight < 15">
+      {{element}}
+    </span>
+  </ng-template>
+</app-table>

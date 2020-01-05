@@ -1,0 +1,21 @@
+<table [dataSource]="dataSource" class="mat-elevation-z8" mat-table>
+  <ng-container *ngFor="let column of columns" [matColumnDef]="column.cell">
+    <ng-container [matColumnDef]="column.cell">
+      <th *matHeaderCellDef mat-header-cell>
+        {{column.cell | titlecase}}
+      </th>
+      <td *matCellDef="let element" mat-cell>
+        <ng-container
+          [ngTemplateOutletContext]="{$implicit: element[column.cell], element: element}"
+          [ngTemplateOutlet]="column.template">
+        </ng-container>
+      </td>
+    </ng-container>
+  </ng-container>
+
+  <!--   Header and Row Declarations-->
+  <tr *matHeaderRowDef="displayColumns" mat-header-row></tr>
+  <tr *matRowDef="let row; columns: displayColumns" mat-row>
+  </tr>
+</table>
+
