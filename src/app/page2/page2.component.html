@@ -1,8 +1,16 @@
 <app-table [dataSource]="data">
-  <ng-template cell="item" let-element>
-    {{element | titlecase}}
+  <ng-template cell="item" let-content>
+    {{content | titlecase}}
   </ng-template>
-  <ng-template cell="cost" let-element>
-    💰 {{element | currency: 'MYR'}}
+  <ng-template cell="cost" let-content>
+    💰 {{content | currency: 'MYR'}}
   </ng-template>
 </app-table>
+
+
+<hr>
+
+<!--<app-old-table-->
+<!--  [dataSource]="data"-->
+<!--  [displayColumns]="['item','cost']">-->
+<!--</app-old-table>-->

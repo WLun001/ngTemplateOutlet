@@ -5,7 +5,6 @@ import {
   Component,
   ContentChildren,
   Input,
-  OnInit,
   QueryList,
   TemplateRef
 } from '@angular/core';
@@ -31,16 +30,13 @@ function mergeArrayObjects<T, K extends keyof T>(s1: T[], s2: T[], key: K): T[] 
   styleUrls: ['./table.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class TableComponent<T> implements OnInit, AfterViewInit {
+export class TableComponent<T> implements AfterViewInit {
   @ContentChildren(CellDirective) cells: QueryList<CellDirective>;
   @Input() dataSource: T[];
   displayColumns: string[];
   columns: TableColumnData[] = [];
 
   constructor(private cdRef: ChangeDetectorRef) {
-  }
-
-  ngOnInit() {
   }
 
   ngAfterViewInit(): void {

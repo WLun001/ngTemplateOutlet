@@ -9,6 +9,8 @@ import { Page1Component } from './page1/page1.component';
 import { Page2Component } from './page2/page2.component';
 import { MatTableModule } from '@angular/material';
 import { CellDirective } from './table/cell.directive';
+import { OldTableComponent } from './old-table/old-table.component';
+import { DemoTemplateComponent } from './demo-template/demo-template.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +19,8 @@ import { CellDirective } from './table/cell.directive';
     Page1Component,
     Page2Component,
     CellDirective,
+    OldTableComponent,
+    DemoTemplateComponent,
   ],
   imports: [
     BrowserModule,
